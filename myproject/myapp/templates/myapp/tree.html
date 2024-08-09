@@ -1,0 +1,11 @@
+<ul>
+    <li>{{ node.name }}
+      {% if node.children %}
+        <ul>
+          {% for child in node.children %}
+            {% include 'myapp/tree.html' with node=child %}
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  </ul>
